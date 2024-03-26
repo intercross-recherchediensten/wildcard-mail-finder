@@ -197,7 +197,7 @@ def get_domains_viewdns(driver, user_email):
 
 def query_whois_os_ai(domain):
     # Queries domain history from whois.os.ai.
-    url = "https://whois.os.ai/get_domain_history"
+    url = "https://whois.os.ai/"
     headers = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "X-Requested-With": "XMLHttpRequest"}
     response = requests.post(url, headers=headers, data={"domain": domain})
     return json.loads(response.text).get(domain, []) if response.status_code == 200 else []
